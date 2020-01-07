@@ -24,13 +24,23 @@ namespace UploadingFilesUsingMVC.Controllers
                 {
                     if (file != null)
                     {
-                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), Path.GetFileName(file.FileName));
+
+                        string filename = Path.GetFileName(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), filename);
                         file.SaveAs(path);
                         //lägger in bilden till den personen.
                         var db = new ApplicationDbContext();
                         var userId = User.Identity.GetUserId();
                         var userInfo = db.Users.FirstOrDefault(a => a.Id == userId);
 
+                        //kollar om användaren hade en bild innan ta bort den isåfall.
+                        if (userInfo.ImageName != null)
+                        {
+                            string oldImagePath = Path.Combine(Server.MapPath("~/UploadedFiles"), userInfo.ImageName);
+                            DeleteFileFromFolder(oldImagePath);
+                        }
+
+                        //sparar 
                         userInfo.ImageName = Path.GetFileName(file.FileName);
                         db.SaveChanges();
 
@@ -46,6 +56,16 @@ namespace UploadingFilesUsingMVC.Controllers
 
             }
             return View("Index");
+        }
+
+        public void DeleteFileFromFolder(string path)
+        {
+
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+
         }
     }
 }
