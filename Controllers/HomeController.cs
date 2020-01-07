@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+
+using LuvDating.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +13,14 @@ namespace LuvDating.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var db = new ApplicationDbContext();
+            var viewModel = new HomeIndexViewModel();
+            if (db.Users.Count() > 4)
+            {
+                viewModel = new HomeIndexViewModel { UserList = db.Users.Take(4).ToList() };
+            }
+            else { viewModel = new HomeIndexViewModel { UserList = db.Users.ToList() }; }
+            return View(viewModel);
         }
 
         public ActionResult About()
