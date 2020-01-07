@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace LuDating.Models
+namespace LuvDating.Models
 {
     public class IndexViewModel
     {

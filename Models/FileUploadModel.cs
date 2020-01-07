@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LuDating.Models
+namespace LuvDating.Models
 {
     public class FileUploadModel
     {

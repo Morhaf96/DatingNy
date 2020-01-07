@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace LuDating
+namespace LuvDating
 {
     public class BundleConfig
     {

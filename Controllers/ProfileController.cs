@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LuDating.Models;
+using LuvDating.Models;
 using Microsoft.AspNet.Identity;
 
-namespace LuDating.Controllers
+namespace LuvDating.Controllers
 {
     public class ProfileController : Controller
     {

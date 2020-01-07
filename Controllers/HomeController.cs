@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LuDating.Controllers
+namespace LuvDating.Controllers
 {
     public class HomeController : Controller
     {

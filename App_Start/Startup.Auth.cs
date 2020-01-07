@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using LuDating.Models;
+using LuvDating.Models;
 
-namespace LuDating
+namespace LuvDating
 {
     public partial class Startup
     {

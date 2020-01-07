@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using LuDating.Models;
+using LuvDating.Models;
 
-namespace LuDating.Controllers
+namespace LuvDating.Controllers
 {
     [Authorize]
     public class ManageController : Controller

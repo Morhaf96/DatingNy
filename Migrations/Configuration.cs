@@ -1,18 +1,18 @@
-namespace LuDating.Migrations
+namespace LuvDating.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LuDating.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LuvDating.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(LuDating.Models.ApplicationDbContext context)
+        protected override void Seed(LuvDating.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

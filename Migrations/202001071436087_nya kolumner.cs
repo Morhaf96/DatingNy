@@ -1,4 +1,4 @@
-namespace LuDating.Migrations
+namespace LuvDating.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

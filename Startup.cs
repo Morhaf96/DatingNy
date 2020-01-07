@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(LuDating.Startup))]
-namespace LuDating
+[assembly: OwinStartupAttribute(typeof(LuvDating.Startup))]
+namespace LuvDating
 {
     public partial class Startup
     {

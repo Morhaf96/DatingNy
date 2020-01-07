@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace LuDating.Models
+namespace LuvDating.Models
 {
     public class ProfileIndexViewModel
     {

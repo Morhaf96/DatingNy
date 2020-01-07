@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using LuDating.Models;
+using LuvDating.Models;
 
-namespace LuDating
+namespace LuvDating
 {
     public class EmailService : IIdentityMessageService
     {
