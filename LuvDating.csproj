@@ -185,6 +185,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
+    <Compile Include="Models\HomeViewModels.cs" />
     <Compile Include="Models\ProfileViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
