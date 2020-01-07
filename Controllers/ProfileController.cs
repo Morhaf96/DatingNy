@@ -24,7 +24,7 @@ namespace LuvDating.Controllers
                 Birth = userInfo.BirthDate,
                 Gender = userInfo.Gender,
                 Bio = userInfo.Bio,
-                Image = userInfo.ImageUrl,
+                Image = userInfo.ImageName,
             });
         }
     }

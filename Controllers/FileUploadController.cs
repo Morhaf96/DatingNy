@@ -31,7 +31,7 @@ namespace UploadingFilesUsingMVC.Controllers
                         var userId = User.Identity.GetUserId();
                         var userInfo = db.Users.FirstOrDefault(a => a.Id == userId);
 
-                        userInfo.ImageUrl = path;
+                        userInfo.ImageName = Path.GetFileName(file.FileName);
                         db.SaveChanges();
 
 

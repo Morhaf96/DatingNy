@@ -7,7 +7,7 @@
 <h2>@Model.Name</h2>
 <h2>@Model.Gender bliet</h2>
 <h2>@Model.Birth</h2>
-<img src="@Model.Image" style="height:200px;width:200px; border-radius: 50%;" alt="Profilbild">
+<img src="~/UploadedFiles/@Model.Image" alt="Sample Photo" />
 
 <h1>@Html.ActionLink("Upload image", "index", "FileUpload")</h1>
 

@@ -179,6 +179,10 @@
     <Compile Include="Migrations\202001071436087_nya kolumner.Designer.cs">
       <DependentUpon>202001071436087_nya kolumner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001071649420_df.cs" />
+    <Compile Include="Migrations\202001071649420_df.Designer.cs">
+      <DependentUpon>202001071649420_df.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\ProfileViewModels.cs" />
@@ -267,6 +271,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001071436087_nya kolumner.resx">
       <DependentUpon>202001071436087_nya kolumner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001071649420_df.resx">
+      <DependentUpon>202001071649420_df.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
