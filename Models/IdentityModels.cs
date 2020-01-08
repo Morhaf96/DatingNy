@@ -29,6 +29,14 @@ namespace LuvDating.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual ICollection<FriendModel> FriendList { get; set; }
+
+
+        public ApplicationUser()
+        {
+            this.FriendList = new HashSet<FriendModel>();
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -37,6 +45,7 @@ namespace LuvDating.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<FriendModel> FriendModels { get; set; }
         public DbSet<PostModel> ProfilePosts { get; set; }
         public static ApplicationDbContext Create()
         {
