@@ -1,18 +1,22 @@
 ﻿@using LuvDating.Models
+@using Microsoft.AspNet.Identity
+@using System.Web.Optimization
 @model ProfileIndexViewModel
 @{
     ViewBag.Title = "index";
+    var isLoggedIn = Request.IsAuthenticated;
+    var userId = isLoggedIn ? User.Identity?.GetUserId() : null;
 }
 
 <div class="container">
     <div class="row">
-        
+
 
 
         <div class="col-sm-6 col-md-5 col-md-offset-0">
-           <h2>@Model.Name</h2>
+            <h2>@Model.Name</h2>
 
-            <img style="max-width: 100%; height: 20em;" src="~/UploadedFiles/@Model.Image" alt="Profilbild" />
+            <img style="width: 20em; height: 20em;" src="~/UploadedFiles/@Model.Image" alt="Profilbild" />
             <button type="button" class="btn btn-default">@Html.ActionLink("Upload image", "index", "FileUpload")</button>
         </div>
         <div class="col-md-4 ">
@@ -33,9 +37,23 @@
     <div class="col-sm-6 col-md-6">
         <h4>Biography</h4>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices tincidunt massa a maximus. In gravida, velit vel tincidunt posuere, urna velit faucibus tellus, ac aliquet eros orci a ligula. Fusce tempor dolor dui, sit amet euismod libero dignissim vitae. Suspendisse at lobortis augue. Donec aliquam, ligula ac feugiat viverra, orci magna commodo urna, eu suscipit massa ante id magna. Curabitur commodo ultricies erat, sed tempus ipsum cursus quis. Donec ac euismod ex, quis fermentum sapien. Sed tempor leo felis, eget luctus est vestibulum facilisis. Etiam sed lobortis sem. Maecenas bibendum massa interdum magna lacinia, non malesuada ipsum consequat.
-    </p></div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices tincidunt massa a maximus. In gravida, velit vel tincidunt posuere, urna velit faucibus tellus, ac aliquet eros orci a ligula. Fusce tempor dolor dui, sit amet euismod libero dignissim vitae. Suspendisse at lobortis augue. Donec aliquam, ligula ac feugiat viverra, orci magna commodo urna, eu suscipit massa ante id magna. Curabitur commodo ultricies erat, sed tempus ipsum cursus quis. Donec ac euismod ex, quis fermentum sapien. Sed tempor leo felis, eget luctus est vestibulum facilisis. Etiam sed lobortis sem. Maecenas bibendum massa interdum magna lacinia, non malesuada ipsum consequat.
+        </p>
+    </div>
+
 </div>
+<div class="message-list" id="messagelist"></div>
+
+@if (isLoggedIn)
+{
+    <form class="message-form">
+        <input type="hidden" id="user-id" value="@userId" />
+        <textarea id="new-message"></textarea>
+        <button type="button" id="send-button">Skicka meddelande</button>
+    </form>
+}
+@Scripts.Render("~/bundles/posts-list")
 
 
 
