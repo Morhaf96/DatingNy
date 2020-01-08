@@ -193,6 +193,9 @@
     <Compile Include="Migrations\202001081149406_Posts.cs" />
     <Compile Include="Migrations\202001081149406_Posts.Designer.cs">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
+    <Compile Include="Migrations\202001081123235_FriendModel_Added_To_db.cs" />
+    <Compile Include="Migrations\202001081123235_FriendModel_Added_To_db.Designer.cs">
+      <DependentUpon>202001081123235_FriendModel_Added_To_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
@@ -290,6 +293,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001081149406_Posts.resx">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001081123235_FriendModel_Added_To_db.resx">
+      <DependentUpon>202001081123235_FriendModel_Added_To_db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
