@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -26,6 +29,26 @@ namespace LuvDating.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public virtual ICollection<FriendModel> Friends { get; set; }
+    }
+    
+    public class FriendModel
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        
+       
+        public string UserID { get; set; }
+
+        public string FriendUserID { get; set; }
+
+        public bool IsFriend { get; set; }
+
+        public int pendingRequest { get; set; }
+        public virtual ICollection<ApplicationUser> User { get; set; }
+
+        
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -39,9 +62,7 @@ namespace LuvDating.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<FriendModel> FriendModel { get; set; }
     }
-    public class ConnectContext : ApplicationDbContext
-    {
-        public DbSet<ApplicationDbContext> Student { get; set; }
-    }
+    
 }
