@@ -5,7 +5,9 @@ using System.Linq;
 using System.Data.Entity;
 using System.Web;
 using System.Web.Http;
-using static LuvDating.Models.ProfilePostViewModel;
+
+using static LuDating.Models.PostModel;
+using LuDating.Models;
 
 namespace LuDating.Controllers
 {
@@ -17,21 +19,23 @@ namespace LuDating.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
+        // /api/postmessage/list
         [HttpGet]
-        public IEnumerable<ProfilePostViewModelDto> List()
+        public IEnumerable<PostModelDto> List()
         {
             return _dbContext.ProfilePosts
                 .Include(m => m.User)
                 .OrderBy(m => m.Timestamp)
                 .ToList()
-                .Select(m => new ProfilePostViewModelDto(m));
+                .Select(m => new PostModelDto(m));
         }
+        // /api/postmessage/send
         [HttpPost]
-        public string Send([FromBody]ProfilePostViewModelDto messageDto)
+        public string Send([FromBody]PostModelDto messageDto)
         {
             try
             {
-                var message = new ProfilePostViewModel(messageDto);
+                var message = new PostModel(messageDto);
                 _dbContext.ProfilePosts.Add(message);
                 _dbContext.SaveChanges();
                 return "Meddelandet har skickats.";
