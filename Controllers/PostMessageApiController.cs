@@ -42,7 +42,7 @@ namespace LuDating.Controllers
             }
             catch
             {
-                return "Inte ok";
+                return "Meddelandet kunde inte skickas.";
             }
         }
     }
