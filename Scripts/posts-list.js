@@ -9,7 +9,7 @@
                 </article>`;
     }
     function updateMessageList() {
-        // Hämta användarid från den dolda input-taggen:
+        // Hämta användarid från den dolda input-taggen:asdasd
         const userId = $('#user-id').val();
 
         $.get('/api/chatmessageapi/list')
