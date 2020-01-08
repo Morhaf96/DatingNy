@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202001081149406_Posts.Designer.cs">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001081619226_MinaAndringa.cs" />
+    <Compile Include="Migrations\202001081619226_MinaAndringa.Designer.cs">
+      <DependentUpon>202001081619226_MinaAndringa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\HomeViewModels.cs" />
@@ -298,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001081149406_Posts.resx">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001081619226_MinaAndringa.resx">
+      <DependentUpon>202001081619226_MinaAndringa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
