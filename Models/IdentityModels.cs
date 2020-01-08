@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace LuvDating.Models
         public string Bio { get; set; }
 
         public string ImageName { get; set; }
+        public virtual ICollection<ProfilePostViewModel> Messages { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -34,7 +36,7 @@ namespace LuvDating.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        public DbSet<ProfilePostViewModel> ProfilePosts { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
