@@ -18,4 +18,10 @@ namespace LuvDating.Models
         public string Image { get; set; }
 
     }
+
+    public class ProfileFriendsViewModel
+    {
+        public List<ApplicationUser> FriendList { get; set; }
+
+    }
 }
