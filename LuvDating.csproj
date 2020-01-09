@@ -213,6 +213,10 @@
     <Compile Include="Migrations\202001081619546_dbfriendtable.Designer.cs">
       <DependentUpon>202001081619546_dbfriendtable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001091736155_friendrequests.cs" />
+    <Compile Include="Migrations\202001091736155_friendrequests.Designer.cs">
+      <DependentUpon>202001091736155_friendrequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001081619546_dbfriendtable.resx">
       <DependentUpon>202001081619546_dbfriendtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001091736155_friendrequests.resx">
+      <DependentUpon>202001091736155_friendrequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
