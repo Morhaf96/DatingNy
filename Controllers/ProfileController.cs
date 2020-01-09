@@ -27,5 +27,28 @@ namespace LuvDating.Controllers
                 Image = userInfo.ImageName,
             });
         }
+        public ActionResult UserProfile(string profileId)
+        {
+            var db = new ApplicationDbContext();
+            var chosenProfile = db.Users.FirstOrDefault(p => p.Id == profileId);
+            var currentUser = User.Identity.GetUserId();
+            if(profileId == currentUser)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(new ProfileIndexViewModel 
+                {
+                    AccountId = chosenProfile.Id,
+                    Name = chosenProfile.Name,
+                    Gender = chosenProfile.Gender,
+                    Birth = chosenProfile.BirthDate,
+                    Bio = chosenProfile.Bio,
+                    Image = chosenProfile.ImageName
+
+                });
+            }
+        }
     }
 }
