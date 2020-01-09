@@ -36,5 +36,20 @@ namespace LuvDating.Controllers
 
             return View();
         }
+
+        public ActionResult Search(string user)
+        {
+
+            var db = new ApplicationDbContext();
+
+            var users = db.Users.ToList();
+
+            if (!String.IsNullOrEmpty(user))
+            {
+                users = users.Where(u => u.Name.Contains(user)).ToList();
+            }
+
+            return View(users);
+        }
     }
 }
