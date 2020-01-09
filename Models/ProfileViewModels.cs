@@ -25,5 +25,30 @@ namespace LuvDating.Models
         public List<ApplicationUser> FriendList { get; set; }
 
     }
+
+    public class ProfileEditViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        //[Required(ErrorMessage = "Please enter a new email")]
+        public string Email { get; set; }
+
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Please enter your name")]
+        public string Name { get; set; }
+        
+        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "Please enter your gender")]
+        public string Gender { get; set; }
+       
+        [Display(Name = "Date of birth (MM/DD/YYYY)")]
+        [Required(ErrorMessage = "Please enter your birthdate")]
+        [DataType(DataType.Date)]
+        public DateTime Birth { get; set; }
+        [Display(Name = "Bio")]
+        public string Bio { get; set; }
+    }
     
 }

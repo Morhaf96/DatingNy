@@ -284,6 +284,7 @@
     <Content Include="Views\Profile\index.cshtml" />
     <Content Include="Views\FileUpload\Index.cshtml" />
     <Content Include="Views\Profile\UserProfile.cshtml" />
+    <Content Include="Views\Profile\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
