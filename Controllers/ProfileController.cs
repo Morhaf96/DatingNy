@@ -35,18 +35,43 @@ namespace LuvDating.Controllers
             }
 
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProfileEditViewModel model)
+        {
+            var db = new ApplicationDbContext();
+            var userId = User.Identity.GetUserId();
+            var userInfo = db.Users.FirstOrDefault(p => p.Id == userId);
+
+            userInfo.Email = model.Email;
+            userInfo.UserName = model.Email;
+            userInfo.Name = model.Name;
+            userInfo.BirthDate = model.Birth;
+            userInfo.Gender = model.Gender;
+            
+            if (ModelState.IsValid)
+            {
+                db.SaveChanges();
+
+                return RedirectToAction("Index", "Profile");
+            }
+            return View(model);
+        }
+
+
         public ActionResult UserProfile(string id)
         {
             var db = new ApplicationDbContext();
             var chosenProfile = db.Users.FirstOrDefault(p => p.Id == id);
             var currentUser = User.Identity.GetUserId();
-            if(id == currentUser)
+            if (id == currentUser)
             {
                 return RedirectToAction("Index");
             }
             else
             {
-                return View(new ProfileIndexViewModel 
+                return View(new ProfileIndexViewModel
                 {
                     AccountId = chosenProfile.Id,
                     Name = chosenProfile.Name,
