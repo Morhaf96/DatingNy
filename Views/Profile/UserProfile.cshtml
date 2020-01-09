@@ -25,10 +25,11 @@
                 <li><h4>@Model.Gender</h4></li>
                 <li><h4>@Model.Birth</h4></li>
             </ul>
-            <p>
-                <a href="#" class="btn btn-primary" role="button">Add Friend</a>
 
-                <a href="#" class="btn btn-primary" role="button">New Post</a>
+            
+
+            <input type="button" class="btn btn-default" value="Send a friendrequest" onclick="'@Url.Action("FriendRequest", "Profile", new { id = Model.AccountId } )'" />
+            <a href="#" class="btn btn-primary" role="button">New Post</a>
         </div>
     </div>
     <hr />

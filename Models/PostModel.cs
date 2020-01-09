@@ -54,6 +54,8 @@ namespace LuDating.Models
         [Key]
         public string FriendRequestReciever { get; set; }
         public bool AreFriends { get; set; }
+
+        //0 = inte besvarad, 1 = godkänd, 2 = nekad
         public int pendingRequest { get; set; }
         [ForeignKey("Users")]
         public virtual ICollection<ApplicationUser> Sender { get; set; }

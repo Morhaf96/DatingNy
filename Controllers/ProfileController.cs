@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LuDating.Models;
 using LuvDating.Models;
 using Microsoft.AspNet.Identity;
 
@@ -82,6 +83,29 @@ namespace LuvDating.Controllers
 
                 });
             }
+        }
+        public ActionResult FriendRequest(string id)
+        {
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var recieverProfile = db.Users.FirstOrDefault(p => p.Id == id);
+            var senderProfile = db.Users.FirstOrDefault(p => p.Id == currentUser);
+
+            if(recieverProfile != null) { 
+                senderProfile.FriendList.Add(new FriendModel { FriendRequestReciever = id }); 
+            }
+
+            var reciever = new FriendModel
+            {
+                FriendRequestReciever = id,
+                AreFriends = false,
+                pendingRequest = 0,
+
+            };
+            reciever.Sender.Add(new ApplicationUser { Id = senderProfile.Id });
+
+            db.SaveChanges();
+            return View();
         }
     }
 }
