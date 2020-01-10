@@ -84,6 +84,7 @@ namespace LuvDating.Controllers
                 });
             }
         }
+        
         public ActionResult FriendRequest(string id)
         {
             var db = new ApplicationDbContext();
@@ -98,14 +99,16 @@ namespace LuvDating.Controllers
             var reciever = new FriendModel
             {
                 FriendRequestReciever = id,
+
+                Name = recieverProfile.Name,
                 AreFriends = false,
-                pendingRequest = 0,
+                pendingRequest = 0
 
             };
             reciever.Sender.Add(new ApplicationUser { Id = senderProfile.Id });
 
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

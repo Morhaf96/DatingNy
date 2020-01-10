@@ -52,6 +52,10 @@ namespace LuDating.Models
     public class FriendModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int FriendId { get; set; }
+
+        public string Name { get; set; }
         public string FriendRequestReciever { get; set; }
         public bool AreFriends { get; set; }
 
