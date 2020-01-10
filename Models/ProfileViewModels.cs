@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LuDating.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -49,6 +50,11 @@ namespace LuvDating.Models
         public DateTime Birth { get; set; }
         [Display(Name = "Bio")]
         public string Bio { get; set; }
+    }
+    
+    public class SenderListModel
+    {
+        public List<ApplicationUser> Requests { get; set; }
     }
     
 }

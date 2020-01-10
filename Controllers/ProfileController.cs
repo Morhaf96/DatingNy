@@ -110,5 +110,22 @@ namespace LuvDating.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult FriendRequests()
+        {
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var senderProfile = db.Users.FirstOrDefault(p => p.Id == currentUser);
+
+            //var query = db.Users.Where(p => p.Id == currentUser).SelectMany(p => p.FriendList).ToList();
+            var query = db.FriendModels.Where(p => p.FriendRequestReciever == currentUser).SelectMany(p => p.Sender).ToList();
+
+            var list = new SenderListModel
+            {
+                Requests = query
+            };
+
+            return View(list);
+        }
     }
 }
