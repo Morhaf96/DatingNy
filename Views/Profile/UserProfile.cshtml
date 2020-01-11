@@ -29,7 +29,7 @@
 
 
             @*<input type="button" class="btn btn-default" value="Send a friendrequest" onclick="'@Url.Action("FriendRequest", "Profile", new { id = Model.AccountId } )'" />*@
-            <input type="button" class="btn btn-default" value="Send a friendrequest" onclick="'@Url.Action("FriendRequest", "Profile", new { id = Model.AccountId } )'" />
+            <input type="button" class="btn btn-default" value="Send a friendrequest" onclick="location.href='@Url.Action("FriendRequest", "Profile", new { id = Model.AccountId } )'" />
             <a href="#" class="btn btn-primary" role="button">New Post</a>
         </div>
     </div>

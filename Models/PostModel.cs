@@ -52,15 +52,20 @@ namespace LuDating.Models
     public class FriendModel
     {
         [Key]
+        [Column(Order = 1)]
+        public string FriendRequestReciever { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        [Column(Order = 2)]
+
+       
         public int FriendId { get; set; }
 
-        public string Name { get; set; }
-        public string FriendRequestReciever { get; set; }
-        public bool AreFriends { get; set; }
-
-        //0 = inte besvarad, 1 = godkänd, 2 = nekad
         public int pendingRequest { get; set; }
+
+        public string Name { get; set; }
+
         [ForeignKey("Users")]
         public virtual ICollection<ApplicationUser> Sender { get; set; }
 

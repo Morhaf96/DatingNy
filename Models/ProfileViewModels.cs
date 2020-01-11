@@ -54,7 +54,7 @@ namespace LuvDating.Models
     
     public class SenderListModel
     {
-        public List<ApplicationUser> Requests { get; set; }
+        public List<ApplicationUser> RequestsFrom { get; set; }
     }
     
 }

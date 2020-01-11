@@ -92,40 +92,151 @@ namespace LuvDating.Controllers
             var recieverProfile = db.Users.FirstOrDefault(p => p.Id == id);
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == currentUser);
 
-            if(recieverProfile != null) { 
-                senderProfile.FriendList.Add(new FriendModel { FriendRequestReciever = id }); 
-            }
+                senderProfile.FriendList.Add(new FriendModel 
+                { 
+                    FriendRequestReciever = id,
+                    Name = recieverProfile.Name,
+                    pendingRequest = 0
+                }); 
+            
 
-            var reciever = new FriendModel
-            {
-                FriendRequestReciever = id,
-
-                Name = recieverProfile.Name,
-                AreFriends = false,
-                pendingRequest = 0
-
-            };
+            var reciever = new FriendModel();
+            
             reciever.Sender.Add(new ApplicationUser { Id = senderProfile.Id });
 
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult FriendRequests()
+        public ActionResult DisplayFriendRequests()
         {
             var db = new ApplicationDbContext();
             var currentUser = User.Identity.GetUserId();
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == currentUser);
-
-            //var query = db.Users.Where(p => p.Id == currentUser).SelectMany(p => p.FriendList).ToList();
-            var query = db.FriendModels.Where(p => p.FriendRequestReciever == currentUser).SelectMany(p => p.Sender).ToList();
-
+            var query = db.FriendModels.Where(p => p.FriendRequestReciever == currentUser && p.pendingRequest == 0).SelectMany(p => p.Sender).ToList();
             var list = new SenderListModel
             {
-                Requests = query
+                RequestsFrom = query
             };
 
             return View(list);
         }
+
+        public ActionResult AcceptRequest(string id)
+        {
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
+            var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
+            var usr = currentProfile.Sender.ToList();
+            var fren = senderProfile.FriendList.ToList();
+            
+           for( int i = 0;  i < usr.Count(); i++)
+            {
+                if (usr[i].Id == id && fren[i].FriendRequestReciever == currentUser && fren[i].pendingRequest == 0 )
+                {
+                    fren[i].pendingRequest = 1;
+                    break;
+                }
+            }db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeclineRequest(string id)
+        {
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
+            var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
+            var usr = currentProfile.Sender.ToList();
+            var fren = senderProfile.FriendList.ToList();
+
+            for (int i = 0; i < usr.Count(); i++)
+            {
+                if (usr[i].Id == id && fren[i].FriendRequestReciever == currentUser && fren[i].pendingRequest == 0)
+                {
+                    fren[i].pendingRequest = 2;
+                    fren.Remove(fren[i]);
+                    break;
+                    
+                }
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DisplayFriends()
+        {
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var senderProfile = db.Users.FirstOrDefault(p => p.Id == currentUser);
+            var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
+            var query = db.FriendModels.Where(p => p.FriendRequestReciever == currentUser && p.pendingRequest == 1).SelectMany(p => p.Sender).ToList();
+            
+            var lista = senderProfile.FriendList.ToList();
+
+            var usr = new List<ApplicationUser>();
+           
+           
+            if(currentProfile != null)
+            {
+                 usr = currentProfile.Sender.ToList();
+                for (int i = 0; i < lista.Count(); i++)
+                {
+                    if (lista[i].pendingRequest == 1 && lista[i].FriendRequestReciever != currentUser && usr[i].Id == currentUser)
+                    {
+                        var profile = db.Users.FirstOrDefault(p => p.Id == lista[i].FriendRequestReciever);
+                        query.Add(profile);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < lista.Count(); i++)
+                {   
+                    if (lista[i].pendingRequest == 1 && lista[i].FriendRequestReciever != currentUser)
+                    {
+                        var _id = lista[i].FriendRequestReciever;
+                        var profile = db.Users.FirstOrDefault(p => p.Id == _id );
+                        query.Add(profile);
+                    }
+                }
+            }
+           
+
+            var list = new SenderListModel
+            {
+                RequestsFrom = query
+            };
+
+            return View(list);
+        }
+
+        public ActionResult DeleteFriend(string id)
+        {
+            var db = new ApplicationDbContext();
+            var currentUser = User.Identity.GetUserId();
+            var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
+            var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
+            var usr = currentProfile.Sender.ToList();
+            var fren = senderProfile.FriendList.ToList();
+
+            for (int i = 0; i < usr.Count(); i++)
+            {
+                if (usr[i].Id == id && fren[i].FriendRequestReciever == currentUser && fren[i].pendingRequest == 1)
+                {
+                    fren[i].pendingRequest = 2;
+                    fren.Remove(fren[i]);
+                    break;
+
+                }
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
     }
+
+
 }
