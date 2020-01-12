@@ -198,6 +198,10 @@
     <Compile Include="Migrations\202001081149406_Posts.Designer.cs">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001081530492_msh.cs" />
+    <Compile Include="Migrations\202001081530492_msh.Designer.cs">
+      <DependentUpon>202001081530492_msh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\HomeViewModels.cs" />
@@ -214,6 +218,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PostList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -295,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001081149406_Posts.resx">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001081530492_msh.resx">
+      <DependentUpon>202001081530492_msh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
