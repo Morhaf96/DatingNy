@@ -92,6 +92,8 @@ namespace LuvDating.Models
 
         [Display(Name = "Date of birth (MM/DD/YYYY)")]
         [DataType(DataType.Date)]
+        [DateMinimumAge(18)]
+        [DateMaximumAge(100)]
         public DateTime BirthDate { get; set; }
 
         [Required]

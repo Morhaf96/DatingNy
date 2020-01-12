@@ -7,13 +7,13 @@ namespace LuvDating.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class msh : IMigrationMetadata
+    public sealed partial class MinaAndringa : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(msh));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MinaAndringa));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001081530492_msh"; }
+            get { return "202001081619226_MinaAndringa"; }
         }
         
         string IMigrationMetadata.Source

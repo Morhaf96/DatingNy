@@ -1,7 +1,7 @@
-﻿using System;
+﻿using LuDating.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LuvDating.Models
 {
@@ -15,7 +15,7 @@ namespace LuvDating.Models
         public DateTime Birth { get; set; }
 
         public string Bio { get; set; }
-
+        
         public string Image { get; set; }
 
     }
@@ -26,6 +26,9 @@ namespace LuvDating.Models
 
     }
 
+    
+
+
     public class ProfileEditViewModel
     {
         [Required(ErrorMessage = "Please enter your email")]
@@ -33,28 +36,28 @@ namespace LuvDating.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-
+        
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Please enter your name")]
         [RegularExpression("^([a-zA-Zåäö]{2,}\\s[a-zA-zåäö]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Zåäö]{1,})?)", ErrorMessage = "Write a correct first and last name!")]
         public string Name { get; set; }
-
+        
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "Please enter your gender")]
         public string Gender { get; set; }
-
+       
         [Display(Name = "Date of birth")]
         [Required(ErrorMessage = "Please enter your birthdate")]
         [DateMinimumAge(18)]
         [DateMaximumAge(100)]
         [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Birth { get; set; }
-
+        
         [Display(Name = "Bio (Optional)")]
         public string Bio { get; set; }
     }
-
+    
     public class SenderListModel
     {
         public List<ApplicationUser> RequestsFrom { get; set; }
@@ -115,5 +118,6 @@ namespace LuvDating.Models
 
         public int MaximumAge { get; }
     }
+
 
 }

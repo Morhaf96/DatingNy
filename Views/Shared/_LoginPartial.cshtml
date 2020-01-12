@@ -9,8 +9,9 @@
 
 
 
-        <li>@Html.ActionLink("Friends", "Friends", "Profile")</li>
+        <li>@Html.ActionLink("Friends", "DisplayFriends", "Profile")</li>
         <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
+        <li>@Html.ActionLink("Friendrequests", "DisplayFriendRequests", "Profile")</li>
         <li>
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
