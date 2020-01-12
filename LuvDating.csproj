@@ -60,13 +60,16 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -203,7 +206,6 @@
     <Compile Include="Migrations\202001081530492_msh.cs" />
     <Compile Include="Migrations\202001081530492_msh.Designer.cs">
       <DependentUpon>202001081530492_msh.cs</DependentUpon>
-<<<<<<< HEAD
 >>>>>>> parent of 32a4a6d... asdasd
     <Compile Include="Migrations\202001081614098_db.cs" />
     <Compile Include="Migrations\202001081614098_db.Designer.cs">
@@ -225,12 +227,10 @@
     <Compile Include="Migrations\202001112248335_delete_AreFriends.cs" />
     <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
-=======
->>>>>>> parent of 47e4e5d... Merge branch 'master' of https://github.com/Snoodelz/LuvDating
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
-    <Compile Include="Models\HomeViewModels.cs" />
+    <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\ProfileViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -299,6 +299,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Profile\index.cshtml" />
     <Content Include="Views\FileUpload\Index.cshtml" />
+    <Content Include="Views\Profile\UserProfile.cshtml" />
+    <Content Include="Views\Profile\EditProfile.cshtml" />
+    <Content Include="Views\Profile\DisplayFriendRequests.cshtml" />
+    <Content Include="Views\Profile\DisplayFriends.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -333,7 +338,6 @@
 =======
     <EmbeddedResource Include="Migrations\202001081530492_msh.resx">
       <DependentUpon>202001081530492_msh.cs</DependentUpon>
-<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202001081614098_db.resx">
 >>>>>>> parent of 32a4a6d... asdasd
       <DependentUpon>202001081614098_db.cs</DependentUpon>
@@ -349,8 +353,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
-=======
->>>>>>> parent of 47e4e5d... Merge branch 'master' of https://github.com/Snoodelz/LuvDating
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
