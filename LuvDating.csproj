@@ -197,6 +197,16 @@
     <Compile Include="Migrations\202001071649420_df.Designer.cs">
       <DependentUpon>202001071649420_df.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Migrations\202001081149406_Posts.cs" />
+    <Compile Include="Migrations\202001081149406_Posts.Designer.cs">
+      <DependentUpon>202001081149406_Posts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001081530492_msh.cs" />
+    <Compile Include="Migrations\202001081530492_msh.Designer.cs">
+      <DependentUpon>202001081530492_msh.cs</DependentUpon>
+>>>>>>> parent of 32a4a6d... asdasd
     <Compile Include="Migrations\202001081614098_db.cs" />
     <Compile Include="Migrations\202001081614098_db.Designer.cs">
       <DependentUpon>202001081614098_db.cs</DependentUpon>
@@ -218,8 +228,6 @@
     <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> parent of c04e0c5... Posts (ej klart)
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
@@ -236,6 +244,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PostList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -324,7 +333,13 @@
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <EmbeddedResource Include="Migrations\202001081614098_db.resx">
+=======
+    <EmbeddedResource Include="Migrations\202001081530492_msh.resx">
+      <DependentUpon>202001081530492_msh.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001081614098_db.resx">
+>>>>>>> parent of 32a4a6d... asdasd
       <DependentUpon>202001081614098_db.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001111316536_keychange_friends.resx">
@@ -339,8 +354,6 @@
     <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> parent of c04e0c5... Posts (ej klart)
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
