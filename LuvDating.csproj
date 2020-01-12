@@ -205,21 +205,9 @@
     <Compile Include="Migrations\202001081614098_db.Designer.cs">
       <DependentUpon>202001081614098_db.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001111316536_keychange_friends.cs" />
-    <Compile Include="Migrations\202001111316536_keychange_friends.Designer.cs">
-      <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001111321520_keychange_friends100.cs" />
-    <Compile Include="Migrations\202001111321520_keychange_friends100.Designer.cs">
-      <DependentUpon>202001111321520_keychange_friends100.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001112117240_keychangex2000.cs" />
-    <Compile Include="Migrations\202001112117240_keychangex2000.Designer.cs">
-      <DependentUpon>202001112117240_keychangex2000.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001112248335_delete_AreFriends.cs" />
-    <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
-      <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
+    <Compile Include="Migrations\202001122335056_Friend_keyChange.cs" />
+    <Compile Include="Migrations\202001122335056_Friend_keyChange.Designer.cs">
+      <DependentUpon>202001122335056_Friend_keyChange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
@@ -327,17 +315,8 @@
     <EmbeddedResource Include="Migrations\202001081614098_db.resx">
       <DependentUpon>202001081614098_db.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001111316536_keychange_friends.resx">
-      <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001111321520_keychange_friends100.resx">
-      <DependentUpon>202001111321520_keychange_friends100.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001112117240_keychangex2000.resx">
-      <DependentUpon>202001112117240_keychangex2000.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
-      <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001122335056_Friend_keyChange.resx">
+      <DependentUpon>202001122335056_Friend_keyChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
