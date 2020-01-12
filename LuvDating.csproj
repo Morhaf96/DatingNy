@@ -60,16 +60,13 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -197,8 +194,6 @@
     <Compile Include="Migrations\202001071649420_df.Designer.cs">
       <DependentUpon>202001071649420_df.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Migrations\202001081149406_Posts.cs" />
     <Compile Include="Migrations\202001081149406_Posts.Designer.cs">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
@@ -206,27 +201,6 @@
     <Compile Include="Migrations\202001081530492_msh.cs" />
     <Compile Include="Migrations\202001081530492_msh.Designer.cs">
       <DependentUpon>202001081530492_msh.cs</DependentUpon>
->>>>>>> parent of 32a4a6d... asdasd
-    <Compile Include="Migrations\202001081614098_db.cs" />
-    <Compile Include="Migrations\202001081614098_db.Designer.cs">
-      <DependentUpon>202001081614098_db.cs</DependentUpon>
-    </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\202001111316536_keychange_friends.cs" />
-    <Compile Include="Migrations\202001111316536_keychange_friends.Designer.cs">
-      <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001111321520_keychange_friends100.cs" />
-    <Compile Include="Migrations\202001111321520_keychange_friends100.Designer.cs">
-      <DependentUpon>202001111321520_keychange_friends100.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001112117240_keychangex2000.cs" />
-    <Compile Include="Migrations\202001112117240_keychangex2000.Designer.cs">
-      <DependentUpon>202001112117240_keychangex2000.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001112248335_delete_AreFriends.cs" />
-    <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
-      <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
@@ -300,7 +274,7 @@
     <Content Include="Views\Profile\index.cshtml" />
     <Content Include="Views\FileUpload\Index.cshtml" />
     <Content Include="Views\Profile\UserProfile.cshtml" />
-    <Content Include="Views\Profile\EditProfile.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Profile\DisplayFriendRequests.cshtml" />
     <Content Include="Views\Profile\DisplayFriends.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
@@ -332,27 +306,8 @@
     <EmbeddedResource Include="Migrations\202001081149406_Posts.resx">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <EmbeddedResource Include="Migrations\202001081614098_db.resx">
-=======
     <EmbeddedResource Include="Migrations\202001081530492_msh.resx">
       <DependentUpon>202001081530492_msh.cs</DependentUpon>
-    <EmbeddedResource Include="Migrations\202001081614098_db.resx">
->>>>>>> parent of 32a4a6d... asdasd
-      <DependentUpon>202001081614098_db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001111316536_keychange_friends.resx">
-      <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001111321520_keychange_friends100.resx">
-      <DependentUpon>202001111321520_keychange_friends100.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001112117240_keychangex2000.resx">
-      <DependentUpon>202001112117240_keychangex2000.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
-      <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
