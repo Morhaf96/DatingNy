@@ -204,7 +204,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
-    <Compile Include="Models\HomeIndexViewModel.cs" />
+    <Compile Include="Models\HomeViewModels.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\ProfileViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
