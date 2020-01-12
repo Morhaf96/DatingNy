@@ -24,7 +24,10 @@ namespace LuvDating
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/PostList.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/posts-list").Include(
+                    "~/Scripts/posts-list.js"));
         }
     }
 }
