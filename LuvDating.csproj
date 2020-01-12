@@ -202,6 +202,7 @@
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Migrations\202001081530492_msh.cs" />
     <Compile Include="Migrations\202001081530492_msh.Designer.cs">
       <DependentUpon>202001081530492_msh.cs</DependentUpon>
@@ -225,6 +226,8 @@
     <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of c04e0c5... Posts (ej klart)
 =======
 >>>>>>> parent of c04e0c5... Posts (ej klart)
     <Compile Include="Migrations\Configuration.cs" />
@@ -331,6 +334,7 @@
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202001081530492_msh.resx">
       <DependentUpon>202001081530492_msh.cs</DependentUpon>
     <EmbeddedResource Include="Migrations\202001081614098_db.resx">
@@ -348,6 +352,8 @@
     <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> parent of c04e0c5... Posts (ej klart)
 =======
 >>>>>>> parent of c04e0c5... Posts (ej klart)
   </ItemGroup>
