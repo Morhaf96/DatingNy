@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LuvDating.Models
 {
@@ -16,7 +15,7 @@ namespace LuvDating.Models
         public DateTime Birth { get; set; }
 
         public string Bio { get; set; }
-
+        
         public string Image { get; set; }
 
     }

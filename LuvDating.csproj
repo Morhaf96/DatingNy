@@ -295,6 +295,7 @@
     <Content Include="Views\Profile\EditProfile.cshtml" />
     <Content Include="Views\Profile\DisplayFriendRequests.cshtml" />
     <Content Include="Views\Profile\DisplayFriends.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
