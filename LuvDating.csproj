@@ -201,6 +201,7 @@
     <Compile Include="Migrations\202001081614098_db.Designer.cs">
       <DependentUpon>202001081614098_db.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\202001111316536_keychange_friends.cs" />
     <Compile Include="Migrations\202001111316536_keychange_friends.Designer.cs">
       <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
@@ -217,6 +218,8 @@
     <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of c04e0c5... Posts (ej klart)
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
@@ -320,6 +323,7 @@
     <EmbeddedResource Include="Migrations\202001081149406_Posts.resx">
       <DependentUpon>202001081149406_Posts.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
       <EmbeddedResource Include="Migrations\202001081614098_db.resx">
       <DependentUpon>202001081614098_db.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +339,8 @@
     <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
       <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> parent of c04e0c5... Posts (ej klart)
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
