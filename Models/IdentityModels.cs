@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -16,10 +17,13 @@ namespace LuvDating.Models
         public string Name { get; set; }
 
         public string Gender { get; set; }
+
+        [DisplayName("Birth date")]
         public DateTime BirthDate { get; set; }
 
         public string Bio { get; set; }
 
+        [DisplayName("Image")]
         public string ImageName { get; set; }
         public virtual ICollection<PostModel> Messages { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -29,6 +33,14 @@ namespace LuvDating.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual ICollection<FriendModel> FriendList { get; set; }
+
+
+        public ApplicationUser()
+        {
+            this.FriendList = new HashSet<FriendModel>();
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -37,6 +49,7 @@ namespace LuvDating.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<FriendModel> FriendModels { get; set; }
         public DbSet<PostModel> ProfilePosts { get; set; }
         public static ApplicationDbContext Create()
         {
