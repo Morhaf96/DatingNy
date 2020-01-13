@@ -5,6 +5,10 @@
 }
 
 <div class="jumbotron">
+    @if(TempData["notice"] != null)
+    {
+    <div class="alert alert-warning" role="alert">@TempData["notice"]</div>
+    }
     <h1>Luv Dating</h1>
     <p class="lead">Luv Dating är en mötesplats för alla ensamma singlar. Välkommen in i värmen!</p>
     <p><a class="btn btn-primary btn-lg">Sign up! &raquo;</a></p>
@@ -22,7 +26,7 @@
                 <div class="caption">
                     <h3>@profile.Name</h3>
                     <p>@profile.Bio</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="/Profile/UserProfile/@profile.Id" class="list-group-item col-sm-3"></a>
+                    <a href="/Profile/UserProfile/@profile.Id" class="btn btn-primary">View Profile</a>
 </div>
             </div>
         </div>

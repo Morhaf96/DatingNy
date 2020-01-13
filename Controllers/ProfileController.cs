@@ -110,7 +110,7 @@ namespace LuvDating.Controllers
                 });
             }
         }
-
+        [Authorize]
         public ActionResult FriendRequest(string id)
         {
             var db = new ApplicationDbContext();
@@ -178,8 +178,6 @@ namespace LuvDating.Controllers
             var currentUser = User.Identity.GetUserId();
             var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
-            //var usr = currentProfile.Sender.ToList();
-            //var fren = senderProfile.FriendList.ToList();
 
             var usr = db.FriendModels.SelectMany(p => p.Sender).ToList();
             var fren = db.Users.SelectMany(p => p.FriendList).ToList();
@@ -270,9 +268,6 @@ namespace LuvDating.Controllers
                     (sender[i].Id == currentUser && reciever[i].FriendRequestReciever == id))
                 {
                     reciever[i].pendingRequest = 2;
-
-                    //var deleted = ("Deleted" + reciever[i].FriendId);
-
                     reciever[i].FriendRequestReciever = "DELETED";
                     break;
                 }
