@@ -82,6 +82,7 @@ namespace LuvDating.Models
     {
 
         [Required]
+        [RegularExpression("^([a-zA-Zåäö]{2,}\\s[a-zA-zåäö]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Zåäö]{1,})?)", ErrorMessage = "Write a correct first and last name!")]
         [Display(Name = "Name")]
         public string Name { get; set; }
 
