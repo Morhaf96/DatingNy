@@ -7,6 +7,11 @@
 
 <h1>Search Results:</h1>
 
+@if (Model.Count() < 1)
+{
+    <h2>No results found.</h2>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -25,6 +30,8 @@
             @Html.DisplayNameFor(model => model.Bio)
         </th>
     </tr>
+
+
 
     @foreach (var item in Model)
     {
