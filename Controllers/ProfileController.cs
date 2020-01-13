@@ -127,7 +127,10 @@ namespace LuvDating.Controllers
 
             for (int i = 0; i < validatorList.Count(); i++)
             {
-                if (validatorList[i].FriendRequestReciever == id && validatorList2[i].Id == currentUser || (validatorList[i].FriendRequestReciever == currentUser && validatorList2[i].Id == id))
+
+                //Kontrollerar om denna kombination av Id redan finns i db
+                if (validatorList[i].FriendRequestReciever == id && validatorList2[i].Id == currentUser 
+                    || (validatorList[i].FriendRequestReciever == currentUser && validatorList2[i].Id == id))
                 {
                     exists = true;
                     break;
@@ -178,14 +181,14 @@ namespace LuvDating.Controllers
             var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
 
-            var usr = db.FriendModels.SelectMany(p => p.Sender).ToList();
-            var fren = db.Users.SelectMany(p => p.FriendList).ToList();
+            var validatorList = db.FriendModels.SelectMany(p => p.Sender).ToList();
+            var validatorList2 = db.Users.SelectMany(p => p.FriendList).ToList();
 
-            for (int i = 0; i < usr.Count(); i++)
+            for (int i = 0; i < validatorList.Count(); i++)
             {
-                if (usr[i].Id == id && fren[i].FriendRequestReciever == currentUser && fren[i].pendingRequest == 0)
+                if (validatorList[i].Id == id && validatorList2[i].FriendRequestReciever == currentUser && validatorList2[i].pendingRequest == 0)
                 {
-                    fren[i].pendingRequest = 1;
+                    validatorList2[i].pendingRequest = 1;
                     break;
                 }
             }
@@ -199,15 +202,12 @@ namespace LuvDating.Controllers
             var currentUser = User.Identity.GetUserId();
             var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
-            //var usr = currentProfile.Sender.ToList();
-            //var fren = senderProfile.FriendList.ToList();
-
             var sender = db.FriendModels.SelectMany(p => p.Sender).ToList();
             var reciever = db.Users.SelectMany(p => p.FriendList).ToList();
 
 
             for (int i = 0; i < sender.Count(); i++)
-            {
+            {  
                 if (sender[i].Id == id && reciever[i].FriendRequestReciever == currentUser && reciever[i].pendingRequest == 0)
                 {
                     reciever[i].pendingRequest = 2;
