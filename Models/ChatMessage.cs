@@ -16,12 +16,16 @@ namespace LuvDating.Models
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
 
+        public string RecieverId { get; set; }
+
+
         public ChatMessage() { }
         public ChatMessage(ChatMessageDto chatMessageDto)
         {
             Message = chatMessageDto.Message;
             Timestamp = DateTime.Parse(chatMessageDto.Timestamp);
             UserId = chatMessageDto.UserId;
+            RecieverId = chatMessageDto.RecieverId;
         }
     }
 
@@ -31,6 +35,7 @@ namespace LuvDating.Models
         public string Timestamp { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
+        public string RecieverId { get; set; }
 
         public ChatMessageDto() { }
         public ChatMessageDto(ChatMessage chatMessage)
@@ -40,6 +45,7 @@ namespace LuvDating.Models
             UserId = chatMessage.UserId;
             // Använd profilens namn som användarnamn:
             UserName = chatMessage.User?.Name ?? chatMessage.User?.UserName;
+            RecieverId = chatMessage.RecieverId;
         }
     }
 

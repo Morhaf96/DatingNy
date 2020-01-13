@@ -1,4 +1,5 @@
 ﻿using LuvDating.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -23,6 +24,7 @@ namespace LuvDating.Controllers
         public IEnumerable<ChatMessageDto> List()
         {
             return _dbContext.ChatMessages
+               
                 .Include(m => m.User)
                 .OrderBy(m => m.Timestamp)
                 .ToList()
@@ -38,11 +40,11 @@ namespace LuvDating.Controllers
                 var message = new ChatMessage(messageDto);
                 _dbContext.ChatMessages.Add(message);
                 _dbContext.SaveChanges();
-                return "Ok";
+                return "Meddelandet har skickats!";
             }
             catch
             {
-                return "Inte ok";
+                return "Något gick fel!";
             }
         }
     }

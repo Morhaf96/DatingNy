@@ -197,6 +197,10 @@
     <Compile Include="Migrations\202001131655031_gdfg.Designer.cs">
       <DependentUpon>202001131655031_gdfg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001131900088_recieverId.cs" />
+    <Compile Include="Migrations\202001131900088_recieverId.Designer.cs">
+      <DependentUpon>202001131900088_recieverId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChatMessage.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
@@ -297,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001131655031_gdfg.resx">
       <DependentUpon>202001131655031_gdfg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001131900088_recieverId.resx">
+      <DependentUpon>202001131900088_recieverId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -6,6 +6,7 @@
     ViewBag.Title = "index";
     var isLoggedIn = Request.IsAuthenticated;
     var userId = isLoggedIn ? User.Identity?.GetUserId() : null;
+    var recieverId = Model.AccountId;
 }
 
 <div class="container">
@@ -47,11 +48,12 @@
 
 @if (isLoggedIn)
 {
-    <form class="message-form">
-        <input type="hidden" id="user-id" value="@userId" />
-        <textarea id="new-message"></textarea>
-        <button type="button" id="send-button">Skicka meddelande</button>
-    </form>
+<form class="message-form">
+    <input type="hidden" id="user-id" value="@userId" />
+    <input type="hidden" id="reciever-id" value="@recieverId" />
+    <textarea id="new-message"></textarea>
+    <button type="button" id="send-button">Skicka meddelande</button>
+</form>
 }
 
 @Scripts.Render("~/bundles/message-list")

@@ -11,16 +11,20 @@
     function updateMessageList() {
         // Hämta användarid från den dolda input-taggen:
         const userId = $('#user-id').val();
-
+        const recieverId = $('#reciever-id').val();
         $.get('/api/chatmessageapi/list')
             .then((resp) => {
                 if (resp && Array.isArray(resp)) {
                     $('#messagelist').html('');
+                    
                     resp.forEach((mess) => {
-                        const isMine = mess.UserId === userId;
-                        $('#messagelist').append(
-                            messageToHtml(mess, isMine ? 'own-message' : 'other-message')
-                        );
+                        
+                        if (mess.RecieverId === recieverId) {
+                            const isMine = mess.UserId === userId;
+                            $('#messagelist').append(
+                                messageToHtml(mess, isMine ? 'own-message' : 'other-message')
+                            );}
+                        
                     });
                 }
             });
@@ -30,12 +34,16 @@
         const newMessage = $('#new-message').val();
         const timestamp = new Date().toISOString();
         const userId = $('#user-id').val();
+        const recieverId = $('#reciever-id').val();
+        
 
         if (newMessage) {
             const messageObj = {
                 Message: newMessage,
                 Timestamp: timestamp,
-                UserId: userId
+                UserId: userId,
+                RecieverId: recieverId
+
             };
             $.post('/api/chatmessageapi/send', messageObj)
                 .then((resp) => {
@@ -43,7 +51,7 @@
                         $('#new-message').val('');
                         updateMessageList();
                     } else {
-                        alert('Något gick fel!');
+                        alert("Något gick fel!");
                     }
                 });
         }
