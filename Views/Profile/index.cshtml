@@ -29,7 +29,7 @@
             <p>
                 <a href="/Manage/" class="btn btn-primary" role="button">Edit Profile</a>
 
-                <a href="#" class="btn btn-primary" role="button">New Post</a>
+
         </div>
     </div>
     <hr />
@@ -42,14 +42,16 @@
     </div>
 
 </div>
+            <h3 align="center">Post a message on the wall here:</h3>
 <div class="message-list" id="messagelist"></div>
 
 @if (isLoggedIn)
 {
+    
     <form class="message-form">
         <input type="hidden" id="user-id" value="@userId" />
         <textarea id="new-message"></textarea>
-        <button type="button" id="send-button">Skicka meddelande</button>
+        <a href="#" class="btn btn-primary" id="send-button" role="button">Send message!</a>
     </form>
 }
 
