@@ -51,16 +51,10 @@ namespace LuDating.Models
 
     public class FriendModel
     {
-        [Key]
-        [Column(Order = 1)]
-        public string FriendRequestReciever { get; set; }
-
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [Column(Order = 2)]
-
-       
         public int FriendId { get; set; }
+        public string FriendRequestReciever { get; set; }
 
         public int pendingRequest { get; set; }
 

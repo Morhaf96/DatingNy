@@ -8,6 +8,7 @@ using LuDating.Models;
 using LuvDating.Models;
 using Microsoft.AspNet.Identity;
 
+
 namespace LuvDating.Controllers
 {
     public class ProfileController : Controller
@@ -109,7 +110,7 @@ namespace LuvDating.Controllers
                 });
             }
         }
-
+        [Authorize]
         public ActionResult FriendRequest(string id)
         {
             var db = new ApplicationDbContext();
@@ -177,8 +178,6 @@ namespace LuvDating.Controllers
             var currentUser = User.Identity.GetUserId();
             var currentProfile = db.FriendModels.FirstOrDefault(p => p.FriendRequestReciever == currentUser);
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == id);
-            //var usr = currentProfile.Sender.ToList();
-            //var fren = senderProfile.FriendList.ToList();
 
             var usr = db.FriendModels.SelectMany(p => p.Sender).ToList();
             var fren = db.Users.SelectMany(p => p.FriendList).ToList();
@@ -204,17 +203,16 @@ namespace LuvDating.Controllers
             //var usr = currentProfile.Sender.ToList();
             //var fren = senderProfile.FriendList.ToList();
 
-            var usr = db.FriendModels.SelectMany(p => p.Sender).ToList();
-            var fren = db.Users.SelectMany(p => p.FriendList).ToList();
+            var sender = db.FriendModels.SelectMany(p => p.Sender).ToList();
+            var reciever = db.Users.SelectMany(p => p.FriendList).ToList();
 
 
-            for (int i = 0; i < usr.Count(); i++)
+            for (int i = 0; i < sender.Count(); i++)
             {
-                if (usr[i].Id == id && fren[i].FriendRequestReciever == currentUser && fren[i].pendingRequest == 0)
+                if (sender[i].Id == id && reciever[i].FriendRequestReciever == currentUser && reciever[i].pendingRequest == 0)
                 {
-                    fren[i].pendingRequest = 2;
-                    fren.Remove(fren[i]);
-                    usr.Remove(usr[i]);
+                    reciever[i].pendingRequest = 2;
+                    reciever[i].FriendRequestReciever = "DECLINED";
                     break;
 
                 }
@@ -228,17 +226,9 @@ namespace LuvDating.Controllers
             var db = new ApplicationDbContext();
             var currentUser = User.Identity.GetUserId();
             var senderProfile = db.Users.FirstOrDefault(p => p.Id == currentUser);
-
             var query = db.FriendModels.Where(p => p.FriendRequestReciever == currentUser && p.pendingRequest == 1).SelectMany(p => p.Sender).ToList();
-
-
-
-
-
-
             var validationList2 = db.FriendModels.SelectMany(p => p.Sender).ToList();
             var validationList = db.Users.SelectMany(p => p.FriendList).ToList();
-
 
             if (validationList2 != null)
             {
@@ -254,19 +244,6 @@ namespace LuvDating.Controllers
                     }
                 }
             }
-            //else
-            //{
-            //    for (int i = 0; i < lista.Count(); i++)
-            //    {   
-            //        if (lista[i].pendingRequest == 1 && lista[i].FriendRequestReciever != currentUser)
-            //        {
-            //            var _id = lista[i].FriendRequestReciever;
-            //            var profile = db.Users.FirstOrDefault(p => p.Id == _id );
-            //            query.Add(profile);
-            //        }
-            //    }
-            //}
-
 
             var list = new SenderListModel
             {
@@ -285,16 +262,14 @@ namespace LuvDating.Controllers
             var sender = db.FriendModels.SelectMany(p => p.Sender).ToList();
             var reciever = db.Users.SelectMany(p => p.FriendList).ToList();
 
-
             for (int i = 0; i < sender.Count(); i++)
             {
-                if ((sender[i].Id == id && reciever[i].FriendRequestReciever == currentUser && reciever[i].pendingRequest == 1) || (sender[i].Id == currentUser && reciever[i].FriendRequestReciever == id))
+                if ((sender[i].Id == id && reciever[i].FriendRequestReciever == currentUser && reciever[i].pendingRequest == 1) ||
+                    (sender[i].Id == currentUser && reciever[i].FriendRequestReciever == id))
                 {
                     reciever[i].pendingRequest = 2;
-                    reciever.Remove(reciever[i]);
-                    sender.Remove(sender[i]);
+                    reciever[i].FriendRequestReciever = "DELETED";
                     break;
-
                 }
             }
             db.SaveChanges();
