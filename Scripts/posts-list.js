@@ -39,7 +39,7 @@
             };
             $.post('/api/postmessageapi/send', messageObj)
                 .then((resp) => {
-                    if (resp === "Ok") {
+                    if (resp === "Meddelandet har skickats!") {
                         $('#new-message').val('');
                         updateMessageList();
                     } else {

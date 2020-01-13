@@ -29,7 +29,7 @@ namespace LuDating.Controllers
                 .ToList()
                 .Select(m => new PostModelDto(m));
         }
-        // /api/postmessage/send
+        // /api/postmessageapi/send
         [HttpPost]
         public string Send([FromBody]PostModelDto messageDto)
         {
