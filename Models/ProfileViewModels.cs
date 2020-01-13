@@ -25,10 +25,6 @@ namespace LuvDating.Models
         public List<ApplicationUser> FriendList { get; set; }
 
     }
-
-    
-
-
     public class ProfileEditViewModel
     {
         [Required(ErrorMessage = "Please enter your email")]
