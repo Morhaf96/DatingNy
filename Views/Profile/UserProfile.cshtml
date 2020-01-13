@@ -37,11 +37,12 @@
         <h4>Biography</h4>
 
         <p>
-        @Model.Bio    
+            @Model.Bio
         </p>
     </div>
 
 </div>
+
 <div class="message-list" id="messagelist"></div>
 
 @if (isLoggedIn)
@@ -52,7 +53,8 @@
         <button type="button" id="send-button">Skicka meddelande</button>
     </form>
 }
-@Scripts.Render("~/bundles/posts-list")
+
+@Scripts.Render("~/bundles/message-list")
 
 
 

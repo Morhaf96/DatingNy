@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace LuDating.App_Start
+namespace LuvDating
 {
     public static class WebApiConfig
     {
@@ -10,7 +10,7 @@ namespace LuDating.App_Start
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}/{id}",
+                routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
         }

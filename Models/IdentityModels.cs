@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using LuDating.Models;
+using LuvDating.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -25,7 +25,7 @@ namespace LuvDating.Models
 
         [DisplayName("Image")]
         public string ImageName { get; set; }
-        public virtual ICollection<PostModel> Messages { get; set; }
+        public virtual ICollection<ChatMessage> Messages { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -45,19 +45,17 @@ namespace LuvDating.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<FriendModel> FriendModels { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
+
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+    : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<FriendModel> FriendModels { get; set; }
-        public DbSet<PostModel> ProfilePosts { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-    }
-    public class ConnectContext : ApplicationDbContext
-    {
-        public DbSet<ApplicationDbContext> Student { get; set; }
     }
 }

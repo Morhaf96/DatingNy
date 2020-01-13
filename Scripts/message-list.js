@@ -12,7 +12,7 @@
         // Hämta användarid från den dolda input-taggen:
         const userId = $('#user-id').val();
 
-        $.get('/api/postmessageapi/list')
+        $.get('/api/chatmessageapi/list')
             .then((resp) => {
                 if (resp && Array.isArray(resp)) {
                     $('#messagelist').html('');
@@ -37,7 +37,7 @@
                 Timestamp: timestamp,
                 UserId: userId
             };
-            $.post('/api/postmessageapi/send', messageObj)
+            $.post('/api/chatmessageapi/send', messageObj)
                 .then((resp) => {
                     if (resp === "Ok") {
                         $('#new-message').val('');
@@ -57,4 +57,3 @@
         }
     });
 })();
- 

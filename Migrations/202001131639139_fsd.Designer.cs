@@ -7,13 +7,13 @@ namespace LuvDating.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class keychange_friends : IMigrationMetadata
+    public sealed partial class fsd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(keychange_friends));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fsd));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001111316536_keychange_friends"; }
+            get { return "202001131639139_fsd"; }
         }
         
         string IMigrationMetadata.Source

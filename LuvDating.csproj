@@ -181,50 +181,26 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChatMessageApiController.cs" />
     <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PostMessageApiController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001071436087_nya kolumner.cs" />
-    <Compile Include="Migrations\202001071436087_nya kolumner.Designer.cs">
-      <DependentUpon>202001071436087_nya kolumner.cs</DependentUpon>
+    <Compile Include="Migrations\202001131639139_fsd.cs" />
+    <Compile Include="Migrations\202001131639139_fsd.Designer.cs">
+      <DependentUpon>202001131639139_fsd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001071649420_df.cs" />
-    <Compile Include="Migrations\202001071649420_df.Designer.cs">
-      <DependentUpon>202001071649420_df.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001081149406_Posts.cs" />
-    <Compile Include="Migrations\202001081149406_Posts.Designer.cs">
-      <DependentUpon>202001081149406_Posts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001081614098_db.cs" />
-    <Compile Include="Migrations\202001081614098_db.Designer.cs">
-      <DependentUpon>202001081614098_db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001111316536_keychange_friends.cs" />
-    <Compile Include="Migrations\202001111316536_keychange_friends.Designer.cs">
-      <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001111321520_keychange_friends100.cs" />
-    <Compile Include="Migrations\202001111321520_keychange_friends100.Designer.cs">
-      <DependentUpon>202001111321520_keychange_friends100.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001112117240_keychangex2000.cs" />
-    <Compile Include="Migrations\202001112117240_keychangex2000.Designer.cs">
-      <DependentUpon>202001112117240_keychangex2000.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001112248335_delete_AreFriends.cs" />
-    <Compile Include="Migrations\202001112248335_delete_AreFriends.Designer.cs">
-      <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
+    <Compile Include="Migrations\202001131655031_gdfg.cs" />
+    <Compile Include="Migrations\202001131655031_gdfg.Designer.cs">
+      <DependentUpon>202001131655031_gdfg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChatMessage.cs" />
     <Compile Include="Models\FileUploadModel.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
-    <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\ProfileViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -237,6 +213,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MessageList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -254,7 +231,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\posts-list.js" />
+    <Content Include="Scripts\message-list.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -315,29 +292,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001071436087_nya kolumner.resx">
-      <DependentUpon>202001071436087_nya kolumner.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001131639139_fsd.resx">
+      <DependentUpon>202001131639139_fsd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001071649420_df.resx">
-      <DependentUpon>202001071649420_df.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001081149406_Posts.resx">
-      <DependentUpon>202001081149406_Posts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001081614098_db.resx">
-      <DependentUpon>202001081614098_db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001111316536_keychange_friends.resx">
-      <DependentUpon>202001111316536_keychange_friends.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001111321520_keychange_friends100.resx">
-      <DependentUpon>202001111321520_keychange_friends100.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001112117240_keychangex2000.resx">
-      <DependentUpon>202001112117240_keychangex2000.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001112248335_delete_AreFriends.resx">
-      <DependentUpon>202001112248335_delete_AreFriends.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001131655031_gdfg.resx">
+      <DependentUpon>202001131655031_gdfg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

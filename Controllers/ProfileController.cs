@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LuDating.Models;
 using LuvDating.Models;
 using Microsoft.AspNet.Identity;
 
